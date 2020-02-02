@@ -1,6 +1,6 @@
 <?php
 
-namespace AsyncAws\Core\Input;
+namespace AsyncAws\Core\Sts\Input;
 
 class GetCallerIdentityRequest
 {
