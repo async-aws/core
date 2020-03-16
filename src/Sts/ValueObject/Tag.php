@@ -1,6 +1,6 @@
 <?php
 
-namespace AsyncAws\Core\Sts\Input;
+namespace AsyncAws\Core\Sts\ValueObject;
 
 use AsyncAws\Core\Exception\InvalidArgument;
 
@@ -8,19 +8,11 @@ class Tag
 {
     /**
      * The key for a session tag.
-     *
-     * @required
-     *
-     * @var string|null
      */
     private $Key;
 
     /**
      * The value for a session tag.
-     *
-     * @required
-     *
-     * @var string|null
      */
     private $Value;
 
@@ -41,28 +33,14 @@ class Tag
         return $input instanceof self ? $input : new self($input);
     }
 
-    public function getKey(): ?string
+    public function getKey(): string
     {
         return $this->Key;
     }
 
-    public function getValue(): ?string
+    public function getValue(): string
     {
         return $this->Value;
-    }
-
-    public function setKey(?string $value): self
-    {
-        $this->Key = $value;
-
-        return $this;
-    }
-
-    public function setValue(?string $value): self
-    {
-        $this->Value = $value;
-
-        return $this;
     }
 
     public function validate(): void

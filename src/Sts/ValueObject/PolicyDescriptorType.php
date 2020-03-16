@@ -1,6 +1,6 @@
 <?php
 
-namespace AsyncAws\Core\Sts\Input;
+namespace AsyncAws\Core\Sts\ValueObject;
 
 class PolicyDescriptorType
 {
@@ -9,17 +9,15 @@ class PolicyDescriptorType
      * information about ARNs, see Amazon Resource Names (ARNs) and AWS Service Namespaces in the *AWS General Reference*.
      *
      * @see https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html
-     *
-     * @var string|null
      */
     private $arn;
 
     /**
      * @param array{
-     *   arn?: string,
+     *   arn?: null|string,
      * } $input
      */
-    public function __construct(array $input = [])
+    public function __construct(array $input)
     {
         $this->arn = $input['arn'] ?? null;
     }
@@ -32,13 +30,6 @@ class PolicyDescriptorType
     public function getarn(): ?string
     {
         return $this->arn;
-    }
-
-    public function setarn(?string $value): self
-    {
-        $this->arn = $value;
-
-        return $this;
     }
 
     public function validate(): void
