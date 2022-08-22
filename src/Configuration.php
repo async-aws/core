@@ -20,6 +20,7 @@ final class Configuration
     public const OPTION_REGION = 'region';
     public const OPTION_DEBUG = 'debug';
     public const OPTION_PROFILE = 'profile';
+    public const OPTION_HOSTNAME = 'hostname';
     public const OPTION_ACCESS_KEY_ID = 'accessKeyId';
     public const OPTION_SECRET_ACCESS_KEY = 'accessKeySecret';
     public const OPTION_SESSION_TOKEN = 'sessionToken';
@@ -40,6 +41,7 @@ final class Configuration
         self::OPTION_REGION => true,
         self::OPTION_DEBUG => true,
         self::OPTION_PROFILE => true,
+        self::OPTION_HOSTNAME => true,
         self::OPTION_ACCESS_KEY_ID => true,
         self::OPTION_SECRET_ACCESS_KEY => true,
         self::OPTION_SESSION_TOKEN => true,
@@ -60,6 +62,7 @@ final class Configuration
         [self::OPTION_REGION => ['AWS_REGION', 'AWS_DEFAULT_REGION']],
         [self::OPTION_PROFILE => ['AWS_PROFILE', 'AWS_DEFAULT_PROFILE']],
         [
+            self::OPTION_HOSTNAME => ['AWS_HOSTNAME'],
             self::OPTION_ACCESS_KEY_ID => ['AWS_ACCESS_KEY_ID', 'AWS_ACCESS_KEY'],
             self::OPTION_SECRET_ACCESS_KEY => ['AWS_SECRET_ACCESS_KEY', 'AWS_SECRET_KEY'],
             self::OPTION_SESSION_TOKEN => 'AWS_SESSION_TOKEN',
